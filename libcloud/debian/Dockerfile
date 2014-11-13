@@ -19,6 +19,6 @@ RUN ["/bin/bash", "-c", "source py32/bin/activate; pip install tox"]
 RUN adduser --disabled-password --quiet erjohnso
 RUN echo "erjohnso:erjohnso" | chpasswd
 RUN su -l -c 'git clone https://github.com/erjohnso/dotfiles' erjohnso
-RUN su -l -c 'dotfiles/install.sh' erjohnso
+RUN su -l -c 'dotfiles/install.sh -docker' erjohnso
 
 CMD ["su", "-l", "erjohnso"]
